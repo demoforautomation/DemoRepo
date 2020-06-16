@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="Console" target="System_Out">
+			<PatternLayout>
+				<Pattern>[%-5level]%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c[1] -%msg%n
+				</Pattern>
+			</PatternLayout>
+		</Console>
+		<File name="File" fileName="/sks/sks/Calculator.log">
+			<PatternLayout>
+				<Pattern>[%-5level]%d{yyyy-MM-dd HH:mm:ss.SSS}[%t]%c[1] -%msg%n
+				</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger class="*" level="info" additivity="false">
+			<Appender-ref ref="Console" />
+			<Appender-ref ref="File" />
+		</Logger>
+		<Root level="info">
+			<Appender-ref ref="Console" />
+			<Appender-ref ref="File" />
+		</Root>
+	</Loggers>
+</Configuration>
